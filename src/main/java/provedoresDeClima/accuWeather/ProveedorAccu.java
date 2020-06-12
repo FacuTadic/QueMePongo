@@ -1,5 +1,6 @@
 package provedoresDeClima.accuWeather;
 
+import alerta.Alerta;
 import prenda.exception.UnidadDeTemperaturaDesconocidaException;
 import provedoresDeClima.ProveedorDeClima;
 
