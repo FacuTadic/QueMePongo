@@ -23,7 +23,7 @@ public class Sugeridor {
     }
 
     public  List<Clima> alertaDeCiudad(String ciudad){
-        return proveedoresDeClima.obtenerAlertaDeCiudad(ciudad, LocalDate.now());
+        return proveedoresDeClima.getProveedorUtilizado().obtenerAlertaDeCiudad(ciudad, LocalDate.now());
     }
 
 

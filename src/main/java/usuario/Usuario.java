@@ -2,9 +2,8 @@ package usuario;
 
 import guardarropa.*;
 import notificador.Notificador;
-import notificador.TipoDeNotificacion;
+import tipoDeNotificacion.TipoDeNotificacion;
 import prenda.Prenda;
-import prenda.categoria.Categoria;
 import sugerenciasGuardarropaCompartido.SugerenciaCompartida;
 import sugerenciasGuardarropaCompartido.TipoDeSugerencia;
 

@@ -8,7 +8,6 @@ public class AdministradorDeProveedoresDeClima {
     List<ProveedorDeClima> proveedores;
     ProveedorDeClima proveedor;
 
-
     void seleccionarProveedorAleatorio(){
         Random rand = new Random();
         proveedor =  proveedores.get(rand.nextInt(proveedores.size()));
@@ -22,4 +21,6 @@ public class AdministradorDeProveedoresDeClima {
     public ProveedorDeClima getProveedorUtilizado() {
         return proveedor;
     }
+
+
 }
