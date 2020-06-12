@@ -1,6 +1,8 @@
 package usuario;
 
 import guardarropa.*;
+import notificador.Notificador;
+import notificador.TipoDeNotificacion;
 import prenda.Prenda;
 import prenda.categoria.Categoria;
 import sugerenciasGuardarropaCompartido.SugerenciaCompartida;
@@ -10,6 +12,7 @@ import java.util.List;
 
 public class Usuario {
     Guardarropa guardarropaUsuario = new GuardarropaPersonal(EstadosDeGuardarropa.PERSONAL,Categorias.DEFAULT);
+    Notificador notificador = new Notificador();
     List<Guardarropa> guardarropasVinculados;
 
 
@@ -38,6 +41,15 @@ public class Usuario {
 
     SugerenciaCompartida generarSugerencia(TipoDeSugerencia tipo, Prenda prenda){
         return new SugerenciaCompartida(tipo,prenda);
+    }
+
+
+    void agregarMedioDeNotificacion(TipoDeNotificacion notificacion){
+        notificador.agregarNotificacion(notificacion);
+    }
+
+    void quitarMedioDeNotificacion(TipoDeNotificacion notificacion){
+        notificador.quitarNotificacion(notificacion);
     }
 
 

@@ -30,7 +30,7 @@ public class ProveedorAccu implements ProveedorDeClima {
 
     public Clima obtenerAlertaDeCiudad(String ciudad, Date fecha){
         AccuWeatherAPI apiClima = new AccuWeatherAPI();
-        Map<String, Object> alertas = apiClima.getAlertas(“Buenos Aires”);
+        Map<String, Object> alertas = apiClima.getAlertas(ciudad);
         return alertas.get("CurrentAlerts"); //Devuelve un objeto como [“STORM”, “HAIL”, ...]
 
     }

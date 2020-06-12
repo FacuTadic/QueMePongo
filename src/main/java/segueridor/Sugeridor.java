@@ -4,6 +4,7 @@ import prenda.Prenda;
 import provedoresDeClima.AdministradorDeProveedoresDeClima;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,7 +23,7 @@ public class Sugeridor {
     }
 
     public  List<Clima> alertaDeCiudad(String ciudad){
-        return proveedoresDeClima.obtenerAlertaDeCiudad(ciudad,Date.valueOf(ciudad));
+        return proveedoresDeClima.obtenerAlertaDeCiudad(ciudad, LocalDate.now());
     }
 
 
