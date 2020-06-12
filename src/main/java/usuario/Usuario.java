@@ -25,6 +25,7 @@ public class Usuario {
     void crearGuardarropaCompartidoCon(List<Usuario> usuarios){
         GuardarropaCompartido guardarropa = new GuardarropaCompartido(usuarios);
         usuarios.stream().forEach(usuario -> usuario.agregarGuardarropaCompartido(guardarropa));
+        guardarropasVinculados.add(guardarropa);
     }
 
     void agregarGuardarropaCompartido(Guardarropa guardarropaCompartido){
@@ -38,5 +39,7 @@ public class Usuario {
     SugerenciaCompartida generarSugerencia(TipoDeSugerencia tipo, Prenda prenda){
         return new SugerenciaCompartida(tipo,prenda);
     }
+
+
 
 }

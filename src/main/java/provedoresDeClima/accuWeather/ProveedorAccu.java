@@ -3,6 +3,7 @@ package provedoresDeClima.accuWeather;
 import prenda.exception.UnidadDeTemperaturaDesconocidaException;
 import provedoresDeClima.ProveedorDeClima;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +27,15 @@ public class ProveedorAccu implements ProveedorDeClima {
         calcularGastosDeServicio(cantidadDeLlamadas);
         return temperaturaACelsius(valor, unidad);
     }
+
+    public Clima obtenerAlertaDeCiudad(String ciudad, Date fecha){
+        AccuWeatherAPI apiClima = new AccuWeatherAPI();
+        Map<String, Object> alertas = apiClima.getAlertas(“Buenos Aires”);
+        return alertas.get("CurrentAlerts"); //Devuelve un objeto como [“STORM”, “HAIL”, ...]
+
+    }
+
+
 
     @Override
     public Double getComisionDeServicio() {

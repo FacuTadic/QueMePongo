@@ -3,6 +3,7 @@ package segueridor;
 import prenda.Prenda;
 import provedoresDeClima.AdministradorDeProveedoresDeClima;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,5 +16,17 @@ public class Sugeridor {
         Double temperatura = proveedoresDeClima.getProveedorUtilizado().obtenerTemperaturaDeCiudad(ciudad);
         return prendas.stream().filter(prenda -> prenda.aptoParaTemperatura(temperatura)).collect(Collectors.toList());
     }
+
+    public List<Prenda> sugerenciaDiaria(List<Prenda> prendas,String ciudad){
+        return prendas.forEach(prenda -> prenda.aptoParaAlerta(alertaDeCiudad(ciudad)));
+    }
+
+    public  List<Clima> alertaDeCiudad(String ciudad){
+        return proveedoresDeClima.obtenerAlertaDeCiudad(ciudad,Date.valueOf(ciudad));
+    }
+
+
+
+
 
 }
